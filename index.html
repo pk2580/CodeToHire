@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeToHired | Land Your Dream IT Job</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Body Styles */
+        :root {
+            --primary-color: #007BFF; /* A nice, professional blue */
+            --secondary-color: #f8f9fa; /* Light grey for backgrounds */
+            --dark-color: #343a40; /* Dark text color */
+            --light-color: #ffffff; /* White */
+            --success-color: #28a745; /* Green for success states */
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        /* Reusable Container */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--secondary-color);
+        }
+
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #6c757d;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--light-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links .login-link {
+            font-weight: 700;
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: var(--light-color) !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            color: var(--light-color) !important;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--light-color);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: var(--dark-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(248, 249, 250, 0.8), rgba(248, 249, 250, 0.8)), url('https://via.placeholder.com/1920x1080.png?text=Bright+Tech+Background') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .button-primary, .payment-button {
+            background: var(--primary-color);
+            color: var(--light-color) !important;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            margin: 5px;
+            font-family: var(--font-family);
+        }
+        .button-primary:hover, .payment-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 10px 22px;
+            border: 2px solid var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .founder-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+        }
+
+        /* How It Works Section */
+        .how-it-works-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .step-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            flex-basis: 22%;
+            min-width: 250px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--light-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Services Section */
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .service-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-basis: 45%;
+            min-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Exam Preparation Details Section */
+        #exam-details {
+            background-color: var(--light-color);
+        }
+        .exam-details-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: left;
+        }
+        .exam-image {
+            flex: 1;
+        }
+        .exam-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .exam-text {
+            flex: 1.5;
+        }
+        .exam-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .exam-text ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .exam-text ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .exam-text ul li::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        .exam-text .button-primary {
+            margin-top: 20px;
+        }
+        
+        /* Jobs Section Styles */
+        #jobs .section-header {
+            margin-bottom: 40px;
+        }
+        .jobs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: left;
+        }
+        .job-card {
+            background-color: var(--light-color);
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .job-header h3 {
+            margin-right: 10px;
+        }
+        .job-tag {
+            background-color: #e7f1ff;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .job-company {
+            font-weight: 600;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        .job-location {
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .job-description {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: #495057;
+        }
+
+
+        /* Testimonials Section */
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .testimonial-card {
+            background: var(--light-color);
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-basis: 45%;
+            min-width: 300px;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card .author {
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* Pricing Section */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Makes cards same height */
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .pricing-card {
+            background: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 40px 20px;
+            flex-basis: 22%; /* Adjusted for 4 cards */
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .pricing-card h3 {
+            margin-bottom: 15px;
+        }
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            padding-left: 10px;
+            flex-grow: 1; /* Pushes button to bottom */
+        }
+        .pricing-card ul li {
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+        }
+        details {
+            background: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-weight: 600;
+            padding: 1rem;
+            cursor: pointer;
+            list-style: none; /* Hides default arrow */
+            position: relative;
+        }
+        summary::after { /* Custom arrow */
+            content: '+';
+            position: absolute;
+            right: 1rem;
+            font-size: 1.5rem;
+            transition: transform 0.2s ease-in-out;
+        }
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+        details p {
+            padding: 0 1rem 1rem 1rem;
+        }
+
+
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+        }
+        #contact textarea {
+            resize: vertical;
+        }
+        #contact button {
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+        footer a {
+            color: var(--light-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--light-color);
+            transition: stroke 0.3s ease;
+        }
+        .social-links a:hover svg {
+            stroke: var(--primary-color);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Payment Modal Specific Styles */
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
+        
+        .upi-id {
+            font-weight: 600;
+            font-size: 1.1rem;
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0 20px 0;
+        }
+        
+        /* Login, Signup, Add Job Modal Specific Styles */
+        .form-modal-content {
+            max-width: 450px;
+            text-align: left;
+        }
+        .form-modal-content .logo, .form-modal-content h3 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .auth-button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .auth-button:hover {
+            background-color: #0056b3;
+        }
+        .auth-links {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .auth-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Success Message Modal */
+        #successModal .modal-content, #formSubmitSuccessModal .modal-content {
+            border-left: 5px solid var(--success-color);
+        }
+        #successModal .success-icon, #formSubmitSuccessModal .success-icon {
+            font-size: 4rem;
+            color: var(--success-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none; /* On smaller screens, you'd implement a JavaScript hamburger menu here */
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .service-card, .testimonial-card {
+                flex-basis: 100%;
+            }
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .pricing-card {
+                flex-basis: 80%;
+                min-width: 300px;
+            }
+            .pricing-card, .pricing-card.popular {
+                transform: none !important;
+            }
+            .exam-details-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><a href="#">CodeToHired</a></div>
+            <ul class="nav-links">
+                <li><a id="loginNavButton" class="login-link">Login</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#resume-prep">Resume Making</a>
+                        <a href="#exam-details">Exam Preparation</a>
+                        <a href="#mock-interviews">Mock Interviews</a>
+                        <a href="#referrals">Referrals</a>
+                    </div>
+                </li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Stop Applying, Start Getting Interview Calls.</h1>
+                <p>Your Bridge from Classroom to Career. We help final-year students in India build job-winning resumes, crack technical interviews, and land their first IT role in top MNCs and startups.</p>
+                <a href="#contact" class="button-primary">Book a FREE 15-Min Consultation</a>
+                <a href="#services" class="button-secondary">View Our Services</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <img src="https://via.placeholder.com/150" alt="Founder Photo" class="founder-photo">
+                <h2>Tired of Generic Advice? Get a Real Strategy.</h2>
+                <p>I'm Rohan Verma, a Software Engineer at a top MNC. After helping dozens of my juniors navigate the confusing placement process, I started <strong>CodeToHired</strong> to give you the exact playbook that works. No fluff, just actionable guidance.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <h2>Your Path to Placement in 4 Simple Steps</h2>
+            <div class="how-it-works-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Book a Session</h3>
+                    <p>Choose a service that fits your needs and book a free initial consultation call with us.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Get a Custom Plan</h3>
+                    <p>We analyze your skills, goals, and target companies to create a personalized preparation roadmap.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Personalized Mentoring</h3>
+                    <p>Receive 1-on-1 guidance, whether it's building your resume or practicing for a tough interview.</p>
+                </div>
+                 <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Ace Your Interview</h3>
+                    <p>Walk into your interviews with confidence and land the job offer you deserve.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Our Core Services</h2>
+            <div class="services-container">
+                <div class="service-card" id="resume-prep">
+                    <div class="icon">📄</div>
+                    <h3>Resume Making & LinkedIn Overhaul</h3>
+                    <p>Your resume is your first impression. We build powerful, one-page, ATS-friendly resumes that get past the bots and catch the eye of recruiters. We'll also optimize your LinkedIn profile to attract opportunities.</p>
+                </div>
+                <div class="service-card" id="mock-interviews">
+                    <div class="icon">💬</div>
+                    <h3>Realistic Mock Interviews</h3>
+                    <p>Practice makes perfect. We conduct 1-on-1 mock interviews (Technical & HR) that simulate the real pressure. You get a detailed, actionable feedback report within 24 hours to pinpoint your weaknesses.</p>
+                </div>
+                <div class="service-card" id="referrals">
+                    <div class="icon">🔗</div>
+                    <h3>Referral & Network Assistance</h3>
+                    <p>A good referral is the fastest way to get an interview. As part of our premium package, we leverage our growing professional network to help you get referral opportunities at relevant companies, significantly increasing your chances.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="exam-details">
+            <h2>Ace Every Company Exam</h2>
+            <div class="exam-details-container">
+                <div class="exam-image">
+                    <img src="https://via.placeholder.com/500x350.png?text=Exam+Prep+Illustration" alt="Illustration of students preparing for an exam">
+                </div>
+                <div class="exam-text">
+                    <h3>Clear the First Hurdle with Confidence</h3>
+                    <p>The online assessment is the first step for almost every IT company. Our structured course is designed to help you master every section of these exams.</p>
+                    <ul>
+                        <li><strong>Quantitative Aptitude:</strong> Master topics like Time & Work, Percentages, and Probability.</li>
+                        <li><strong>Logical Reasoning:</strong> Solve Puzzles, Seating Arrangements, and Data Interpretation questions with ease.</li>
+                        <li><strong>Verbal Ability:</strong> Improve your Reading Comprehension, Grammar, and Vocabulary.</li>
+                        <li><strong>Coding MCQs:</strong> Strengthen your concepts of DS, Algo, and OOPs to predict outputs accurately.</li>
+                    </ul>
+                    <a href="#pricing" class="button-primary">View Pricing & Enroll</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="jobs">
+            <div class="section-header">
+                <h2>Latest Job Openings</h2>
+                <p class="section-subtitle">Explore the latest opportunities from top companies and startups, curated for freshers.</p>
+                <button id="openJobFormBtn" class="button-primary">Post a New Job</button>
+            </div>
+            <div class="jobs-container" id="jobsContainer">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Software Engineer Intern</h3>
+                        <span class="job-tag">Internship</span>
+                    </div>
+                    <p class="job-company">TechCorp Inc.</p>
+                    <p class="job-location">Bengaluru, India</p>
+                    <p class="job-description">Looking for motivated interns proficient in Java, Python, and basic data structures to work on our flagship product.</p>
+                    <a href="#" class="button-primary">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Graduate Engineer Trainee</h3>
+                        <span class="job-tag">Full-Time</span>
+                    </div>
+                    <p class="job-company">Innovate Solutions</p>
+                    <p class="job-location">Pune, India</p>
+                    <p class="job-description">Hiring fresh graduates from any engineering discipline. Training will be provided in MERN stack development.</p>
+                    <a href="#" class="button-primary">Apply Now</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Data Analyst (Fresher)</h3>
+                        <span class="job-tag">Full-Time</span>
+                    </div>
+                    <p class="job-company">Datawise Analytics</p>
+                    <p class="job-location">Remote</p>
+                    <p class="job-description">We are seeking a detail-oriented fresher with strong SQL and Excel skills to join our analytics team.</p>
+                    <a href="#" class="button-primary">Apply Now</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="testimonials">
+            <h2>Don't Just Take Our Word For It.</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p>"The resume service is a game-changer. I applied to 50+ companies with no replies. After the resume overhaul from CodeToHired, I got 3 interview calls within a week!"</p>
+                    <div class="author">- Priya S., Final Year, VTU</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I was terrified of the technical round. The mock interview session was exactly like the real Wipro interview. I went into the actual interview with so much more confidence and cracked it. Thank you!"</p>
+                    <div class="author">- Ankit R., Placed at Wipro</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h2>Simple, Transparent Pricing for Students.</h2>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3>Resume & LinkedIn Review</h3>
+                    <div class="price">₹599</div>
+                    <ul>
+                        <li>In-depth analysis and rebuild</li>
+                        <li>ATS-Friendly formatting</li>
+                        <li>LinkedIn Profile checklist</li>
+                    </ul>
+                    <button class="payment-button">Choose Plan</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Exam Prep Course</h3>
+                    <div class="price">₹1,499</div>
+                    <ul>
+                        <li>Topic-wise Video Modules</li>
+                        <li>10+ Practice Tests</li>
+                        <li>Doubt clearing sessions</li>
+                    </ul>
+                    <button class="payment-button">Choose Plan</button>
+                </div>
+                <div class="pricing-card popular">
+                    <span class="popular-badge">BEST VALUE</span>
+                    <h3>Placement Pro Package</h3>
+                    <div class="price">₹2,999</div>
+                    <ul>
+                        <li>Full Resume & LinkedIn Review</li>
+                        <li>Complete Exam Prep Course</li>
+                        <li><strong>Two</strong> Mock Interview Sessions</li>
+                        <li>Referral Network Access</li>
+                    </ul>
+                    <button class="payment-button">Choose Plan</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Mock Interview Session</h3>
+                    <div class="price">₹1,199</div>
+                    <ul>
+                        <li>1-on-1 (60 min) session</li>
+                        <li>Choice of Technical or HR</li>
+                        <li>Detailed PDF feedback</li>
+                    </ul>
+                    <button class="payment-button">Choose Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>Is this service for students from non-CS/IT branches?</summary>
+                    <p>Absolutely! We help students from all engineering branches who want to get a job in the IT sector. We will create a custom plan to help you build the necessary skills.</p>
+                </details>
+                <details>
+                    <summary>Do you guarantee a job?</summary>
+                    <p>We do not guarantee a job, as that ultimately depends on your performance. However, we guarantee to provide you with the best possible preparation, resources, and strategy to significantly boost your chances of getting hired.</p>
+                </details>
+                <details>
+                    <summary>What if I am a complete beginner in coding?</summary>
+                    <p>That's perfectly fine. Our initial consultation helps us understand your current level. We'll provide a roadmap starting from the very basics to get you interview-ready.</p>
+                </details>
+                <details>
+                    <summary>How are the mock interviews conducted?</summary>
+                    <p>Mock interviews are conducted online via Google Meet or Zoom. They are 1-on-1, live sessions designed to be as realistic as possible.</p>
+                </details>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <h2>Ready to Launch Your IT Career?</h2>
+            <p class="section-subtitle">Your dream job is closer than you think. Fill out the form below to get started.</p>
+            <form id="contactForm">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <input type="tel" name="WhatsApp" placeholder="Your WhatsApp Number">
+                <textarea name="Message" placeholder="Your Question" rows="4" required></textarea>
+                <button type="submit" class="button-primary">Send My Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 CodeToHired. All Rights Reserved.</p>
+            <p>Email: <a href="mailto:hello@codetohired.com">hello@codetohired.com</a></p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://telegram.org" target="_blank" aria-label="Telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13L2 9L22 2z"></path><path d="M22 2L15 22L11 13L2 9L22 2z"></path></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="addJobModal" class="modal">
+        <div class="modal-content form-modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Post a New Job Opening</h3>
+            <form id="addJobForm">
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobCompany">Company Name</label>
+                    <input type="text" id="jobCompany" required>
+                </div>
+                 <div class="form-group">
+                    <label for="jobLocation">Location</label>
+                    <input type="text" id="jobLocation" required>
+                </div>
+                 <div class="form-group">
+                    <label for="jobDescription">Job Description</label>
+                    <textarea id="jobDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jobTag">Job Type</label>
+                    <select id="jobTag" required>
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Contract">Contract</option>
+                    </select>
+                </div>
+                <button type="submit" class="auth-button">Add Job</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content form-modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="logo">CodeToHired</h3>
+            <h3>Welcome Back!</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <div class="auth-links">
+                <span>Don't have an account?</span>
+                <a href="#" id="signupLink">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="signupModal" class="modal">
+        <div class="modal-content form-modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="logo">CodeToHired</h3>
+            <h3>Create Your Account</h3>
+            <form action="#" method="POST">
+                 <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required>
+                </div>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <div class="auth-links">
+                <span>Already have an account?</span>
+                <a href="#" id="backToLoginLink">Log In</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Complete Your Payment</h3>
+            <p>Scan the QR code with any UPI app or pay to the UPI ID below.</p>
+            <div class="qr-code">
+                
+            </div>
+            <p>UPI ID:</p>
+            <div class="upi-id">codetohired@okhdfcbank</div>
+            <button id="paidButton" class="button-primary">I Have Paid</button>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Payment Successful!</h3>
+            <p>Thank you for your payment. We will get in touch with you shortly.</p>
+        </div>
+    </div>
+    <div id="formSubmitSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We have received your message and will get back to you soon.</p>
+        </div>
+    </div>
+
+
+    <script>
+        // Get all modal elements
+        const loginModal = document.getElementById('loginModal');
+        const signupModal = document.getElementById('signupModal');
+        const paymentModal = document.getElementById('paymentModal');
+        const successModal = document.getElementById('successModal');
+        const addJobModal = document.getElementById('addJobModal');
+        const formSubmitSuccessModal = document.getElementById('formSubmitSuccessModal');
+
+        // Get all buttons and links that open modals
+        const loginNavButton = document.getElementById('loginNavButton');
+        const paymentButtons = document.querySelectorAll('.payment-button');
+        const paidButton = document.getElementById('paidButton');
+        const openJobFormBtn = document.getElementById('openJobFormBtn');
+        const signupLink = document.getElementById('signupLink');
+        const backToLoginLink = document.getElementById('backToLoginLink');
+        
+        // Get all close buttons
+        const closeButtons = document.querySelectorAll('.close-button');
+
+        // Get forms and containers
+        const addJobForm = document.getElementById('addJobForm');
+        const jobsContainer = document.getElementById('jobsContainer');
+        const contactForm = document.getElementById('contactForm');
+
+
+        // --- Add Job Functionality ---
+        if(openJobFormBtn) {
+            openJobFormBtn.onclick = function() {
+                addJobModal.style.display = 'block';
+            }
+        }
+
+        if(addJobForm) {
+            addJobForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent page from reloading
+
+                // Get values from the form
+                const jobTitle = document.getElementById('jobTitle').value;
+                const jobCompany = document.getElementById('jobCompany').value;
+                const jobLocation = document.getElementById('jobLocation').value;
+                const jobDescription = document.getElementById('jobDescription').value;
+                const jobTag = document.getElementById('jobTag').value;
+
+                // Create the new job card element
+                const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                jobCard.innerHTML = `
+                    <div class="job-header">
+                        <h3>${jobTitle}</h3>
+                        <span class="job-tag">${jobTag}</span>
+                    </div>
+                    <p class="job-company">${jobCompany}</p>
+                    <p class="job-location">${jobLocation}</p>
+                    <p class="job-description">${jobDescription}</p>
+                    <a href="#" class="button-primary">Apply Now</a>
+                `;
+
+                // Add the new job card to the top of the container
+                jobsContainer.prepend(jobCard);
+
+                // Close the modal and reset the form
+                addJobModal.style.display = 'none';
+                addJobForm.reset();
+            });
+        }
+
+
+        // --- Authentication Modals Toggle ---
+        if(loginNavButton) {
+            loginNavButton.onclick = function(e) {
+                e.preventDefault();
+                loginModal.style.display = "block";
+            }
+        }
+        if(signupLink) {
+            signupLink.onclick = function(e) {
+                e.preventDefault();
+                loginModal.style.display = "none";
+                signupModal.style.display = "block";
+            }
+        }
+        if(backToLoginLink) {
+            backToLoginLink.onclick = function(e) {
+                e.preventDefault();
+                signupModal.style.display = "none";
+                loginModal.style.display = "block";
+            }
+        }
+        
+        
+        // --- Payment Flow Simulation ---
+        if(paymentButtons) {
+            paymentButtons.forEach(button => {
+                button.onclick = function() {
+                    paymentModal.style.display = "block";
+                }
+            });
+        }
+
+        if(paidButton) {
+            paidButton.onclick = function() {
+                paymentModal.style.display = "none";
+                successModal.style.display = "block";
+                
+                setTimeout(() => {
+                    successModal.style.display = "none";
+                }, 4000);
+            }
+        }
+
+
+        // --- Google Sheet Form Submission ---
+        if(contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+
+                // !!! IMPORTANT: REPLACE THIS URL WITH YOUR OWN GOOGLE APPS SCRIPT URL !!!
+                const scriptURL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+                const formData = new FormData(contactForm);
+
+                fetch(scriptURL, { method: 'POST', body: formData})
+                    .then(response => {
+                        if (response.ok) {
+                            formSubmitSuccessModal.style.display = 'block';
+                            setTimeout(() => {
+                                formSubmitSuccessModal.style.display = 'none';
+                            }, 4000);
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert('An error occurred. Please try again.');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send My Message';
+                    });
+            });
+        }
+        
+
+        // --- General Modal Closing Logic ---
+        // Close modal with the 'X' button
+        if(closeButtons) {
+            closeButtons.forEach(button => {
+                button.onclick = function() {
+                    this.closest('.modal').style.display = 'none';
+                }
+            });
+        }
+
+        // Close modal by clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
